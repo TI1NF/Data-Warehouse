@@ -29,5 +29,5 @@ select avg(TotalAmount), FirstName, LastName from Orders O join Customer C on O.
 
 select count(C.Id) as TotalCustomers, C.Country as nation from Customer C group by C.Country;
 
-select C.Id as Identifier, C.LastName + ', ' + C.FirstName as CustomerName, sum(O.TotalAmount) as TotalSpent from Orders O join Customer C on O.CustomerId = C.id group by C.id, C.LastName + ', ' + C.FirstName group by TotalSpent desc;
+select C.Id as Identifier, C.LastName + ', ' + C.FirstName as CustomerName, sum(O.TotalAmount) as TotalSpent from Orders O join Customer C on O.CustomerId = C.id group by C.id, C.LastName + ', ' + C.FirstName order by TotalSpent desc;
 ```
